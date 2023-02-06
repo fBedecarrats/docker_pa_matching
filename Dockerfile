@@ -67,7 +67,6 @@ RUN install2.r -e -s \
         wdpar
 
 # Create conda environment
-RUN conda create n- replication-wolf
-RUN conda activate replication-wolf
+RUN conda create n- replication
 
 USER 1000
