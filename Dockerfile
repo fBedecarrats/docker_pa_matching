@@ -67,6 +67,7 @@ RUN install2.r -e -s \
         wdpar
 
 # Create conda environment
-RUN conda create n- replication
+COPY environment.yml
+RUN conda env create -f environment.yml
 
 USER 1000
