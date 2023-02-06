@@ -1,0 +1,6 @@
+name: replication-wolf
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - libstdcxx-ng
