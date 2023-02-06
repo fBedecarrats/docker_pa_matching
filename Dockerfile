@@ -78,4 +78,15 @@ RUN pip install \
         dbfread \ 
         pandas
 
+
+RUN julia -e 'using Pkg ; Pkg.add("ArchGDAL")'
+RUN julia -e 'using Pkg ; Pkg.add("DataFrames")'
+RUN julia -e 'using Pkg ; Pkg.add("Discretizers")'
+RUN julia -e 'using Pkg ; Pkg.add("Shapefile")'
+RUN julia -e 'using Pkg ; Pkg.add("FreqTables")'
+RUN julia -e 'using Pkg ; Pkg.add("Plots")'
+RUN julia -e 'using Pkg ; Pkg.add("StatsBase")'
+RUN julia -e 'using Pkg ; Pkg.add("CSV")'
+RUN julia -e 'using Pkg ; Pkg.add("LibGEOS")'
+
 USER 1000
