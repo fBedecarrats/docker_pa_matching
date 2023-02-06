@@ -65,6 +65,11 @@ RUN install2.r -e -s \
         viridis \
         wbstats \
         wdpar
+
+# Create conda environment
+conda create n- replication-wolf
+conda activate replication-wolf
+
 # Install python packages
 RUN pip install \
         earthengine-api \ 
@@ -76,5 +81,8 @@ RUN pip install \
         ray[default] \
         dbfread \ 
         pandas
+
+# This one has to be installed with conda
+conda install libstdcxx-ng
 
 USER 1000
