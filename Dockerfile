@@ -100,14 +100,10 @@ RUN curl -fsSL https://code-server.dev/install.sh | bash && \
     code-server --install-extension redhat.vscode-yaml && \
     code-server --install-extension mhutchie.git-graph && \
     # Install language specific VSCode extensions
-    code-server --install-extension ms-python.python; \
-    fi && \
-    code-server --install-extension njpwerner.reditorsupport.r; \
-    fi && \
-    code-server --install-extension julialang.language-julia; \
-    fi && \
-    code-server --install-extension quarto.quarto; \
-    fi
+    code-server --install-extension ms-python.python && \
+    code-server --install-extension njpwerner.reditorsupport.r && \
+    code-server --install-extension julialang.language-julia && \
+    code-server --install-extension quarto.quarto
 
 
 USER 1000
