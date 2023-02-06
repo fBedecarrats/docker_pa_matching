@@ -66,8 +66,16 @@ RUN install2.r -e -s \
         wbstats \
         wdpar
 
-# Create conda environment
-COPY environment.yml .
-RUN conda env create -f environment.yml
+# Install python packages
+RUN pip install \
+        earthengine-api \ 
+        rasterio \
+        pandas \
+        pydrive \
+        fiona \
+        rasterio \
+        ray[default] \
+        dbfread \ 
+        pandas
 
 USER 1000
