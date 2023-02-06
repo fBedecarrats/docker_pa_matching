@@ -70,19 +70,4 @@ RUN install2.r -e -s \
 RUN conda create n- replication-wolf
 RUN conda activate replication-wolf
 
-# Install python packages
-RUN pip install \
-        earthengine-api \ 
-        rasterio \
-        pandas \
-        pydrive \
-        fiona \
-        rasterio \
-        ray[default] \
-        dbfread \ 
-        pandas
-
-# This one has to be installed with conda
-RUN conda install libstdcxx-ng
-
 USER 1000
