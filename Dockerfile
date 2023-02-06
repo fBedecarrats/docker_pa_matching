@@ -65,5 +65,16 @@ RUN install2.r -e -s \
         viridis \
         wbstats \
         wdpar
+# Install python packages
+RUN pip install \
+        earthengine-api \ 
+        rasterio \
+        pandas \
+        pydrive \
+        fiona \
+        rasterio \
+        ray[default] \
+        dbfread \ 
+        pandas
 
 USER 1000
