@@ -15,5 +15,10 @@ RUN Rscript -e 'remotes::install_github("https://github.com/cran/doMC/tree/fbea3
 
 # All libraries mentionned in original code
 RUN install2.r -e -s aws.s3
+RUN install2.r -e -s countrycode &&\
+        cowplot &&\
+        data.table &&\
+        dtplyr &&\
+        fasterize
 
 USER 1000
