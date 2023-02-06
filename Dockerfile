@@ -15,7 +15,6 @@ RUN Rscript -e 'remotes::install_github("https://github.com/cran/doMC/tree/fbea3
 
 # All libraries mentionned in original code
 RUN install2.r -e -s \
-        quarto &&\
         reticulate &&\
         JuliaCall &&\
         aws.s3 &&\ 
