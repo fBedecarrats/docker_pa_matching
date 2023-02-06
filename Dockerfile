@@ -78,7 +78,7 @@ RUN pip install \
         dbfread \ 
         pandas
 
-
+# Install Julia files
 RUN julia -e 'using Pkg ; Pkg.add("ArchGDAL")'
 RUN julia -e 'using Pkg ; Pkg.add("DataFrames")'
 RUN julia -e 'using Pkg ; Pkg.add("Discretizers")'
@@ -88,5 +88,30 @@ RUN julia -e 'using Pkg ; Pkg.add("Plots")'
 RUN julia -e 'using Pkg ; Pkg.add("StatsBase")'
 RUN julia -e 'using Pkg ; Pkg.add("CSV")'
 RUN julia -e 'using Pkg ; Pkg.add("LibGEOS")'
+
+# Config VS code
+RUN R -e "install.packages('languageserver')"
+
+RUN curl -fsSL https://code-server.dev/install.sh | bash && \
+    # Install general VSCode extensions
+    code-server --install-extension ms-kubernetes-tools.vscode-kubernetes-tools && \
+    code-server --install-extension ms-azuretools.vscode-docker && \
+    code-server --install-extension njpwerner.autodocstring && \
+    code-server --install-extension redhat.vscode-yaml && \
+    code-server --install-extension mhutchie.git-graph && \
+    # Install language specific VSCode extensions
+    if command -v python; then \
+        code-server --install-extension ms-python.python; \
+    fi && \
+    if command -v R; then \
+        code-server --install-extension njpwerner.reditorsupport.r; \
+    fi && \
+    if command -v julia; then \
+        code-server --install-extension julialang.language-julia; \
+    fi && \
+    if command -v quarto; then \
+        code-server --install-extension quarto.quarto; \
+    fi
+
 
 USER 1000
