@@ -88,6 +88,7 @@ RUN julia -e 'using Pkg ; Pkg.add("Plots")'
 RUN julia -e 'using Pkg ; Pkg.add("StatsBase")'
 RUN julia -e 'using Pkg ; Pkg.add("CSV")'
 RUN julia -e 'using Pkg ; Pkg.add("LibGEOS")'
+RUN julia -e 'using Pkg ; Pkg.add("RCall")'
 
 # Config VS code
 RUN R -e "install.packages('languageserver')"
