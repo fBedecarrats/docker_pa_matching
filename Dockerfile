@@ -20,6 +20,7 @@ RUN install2.r -e -s \
         reticulate \
         JuliaCall \
         aws.s3 \ 
+        arrow \
         countrycode \
         cowplot \
         data.table \
